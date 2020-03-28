@@ -1,0 +1,23 @@
+.card-img-overlay {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 8rem;
+    text-shadow: 2px 3px 1px rgba(255, 255, 255, 1);
+}
+
+.card-img-top {
+    height: 150px;
+    width: 100%;
+}
+
+.all {
+    .card-img-top {
+        opacity: 0.1;
+    }
+}
+
+.deaths {
+    .card-img-top {
+        opacity: 0.2;
+    }
+}
