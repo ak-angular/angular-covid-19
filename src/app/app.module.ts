@@ -10,6 +10,11 @@ import { GlobalComponent } from './stats/global/global.component';
 import { CountryComponent } from './stats/country/country.component';
 import { MainComponent } from './common/main/main.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AllComponent } from './pages/all/all.component';
+import { ActiveComponent } from './pages/active/active.component';
+import { DeathsComponent } from './pages/deaths/deaths.component';
+import { RecoveredComponent } from './pages/recovered/recovered.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { FooterComponent } from './common/footer/footer.component';
     GlobalComponent,
     CountryComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    AllComponent,
+    ActiveComponent,
+    DeathsComponent,
+    RecoveredComponent
   ],
   imports: [
     BrowserModule,
