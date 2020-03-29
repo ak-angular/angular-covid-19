@@ -1,13 +1,15 @@
 <h2 class="mb-3">Country data</h2>
 
-<div class="row">
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="row" *ngIf="!isLoading">
     <div class="col-4 offset-8">
         <!-- <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search country"> -->
         <p class="text-right">Data sorted by: <strong>{{ sortLabel[sortBy] }}</strong></p>
     </div>
 </div>
 
-<table *ngIf="stats" class="table table-bordered table-hover">
+<table [hidden]="isLoading" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th scope="col">#</th>

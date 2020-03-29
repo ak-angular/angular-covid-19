@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./global.component.scss']
 })
 export class GlobalComponent implements OnInit {
+  isLoading: boolean = true;
   stats: any = [];
   sortBy: string = 'cases';
   sortLabel: Object = {
@@ -36,6 +37,8 @@ export class GlobalComponent implements OnInit {
 
     return this._http.get(url).subscribe(res => {
       this.stats = res;
+
+      setTimeout(() => this.isLoading = false);
     });
   }
 
