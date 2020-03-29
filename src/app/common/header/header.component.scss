@@ -1,3 +1,8 @@
-.navbar-brand {
-    font-weight: 700;
+.navbar {
+    border-bottom: 1px solid #CCC;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.05);
+
+    &-brand {
+        font-weight: 700;
+    }
 }

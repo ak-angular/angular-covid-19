@@ -1,0 +1,49 @@
+<div *ngIf="globalStats" class="my-5">
+	<div class="row">
+		<div class="col-12 col-md-6 col-xl-3">
+			<div class="card all" routerLink="/cases">
+				<img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
+				<div class="card-img-overlay text-center text-primary">
+					{{ numberWithCommas(globalStats.cases) }}
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Total Cases</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-xl-3">
+			<div class="card all" [routerLink]="['/cases', 'active']">
+				<img class="card-img-top" src="../../../assets/images/card-2.jpg" alt="Card image cap">
+				<div class="card-img-overlay text-center text-info">
+					{{ numberWithCommas(globalStats.active) }}
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Active Cases</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-xl-3">
+			<div class="card all" [routerLink]="['/cases', 'recovered']">
+				<img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
+				<div class="card-img-overlay text-center text-success">
+					{{ numberWithCommas(globalStats.recovered) }}
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Recovered</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-xl-3">
+			<div class="card deaths" [routerLink]="['/cases', 'deaths']">
+				<img class="card-img-top" src="../../../assets/images/card-3.svg" alt="Card image cap">
+				<div class="card-img-overlay text-center text-danger">
+					{{ numberWithCommas(globalStats.deaths) }}
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Deaths</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-loading *ngIf="!globalStats"></app-loading>

@@ -10,11 +10,9 @@ import { GlobalComponent } from './stats/global/global.component';
 import { CountryComponent } from './stats/country/country.component';
 import { MainComponent } from './common/main/main.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AllComponent } from './pages/all/all.component';
-import { ActiveComponent } from './pages/active/active.component';
-import { DeathsComponent } from './pages/deaths/deaths.component';
-import { RecoveredComponent } from './pages/recovered/recovered.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CasesComponent } from './pages/cases/cases.component';
+import { SummaryComponent } from './stats/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +23,9 @@ import { RecoveredComponent } from './pages/recovered/recovered.component';
     CountryComponent,
     MainComponent,
     FooterComponent,
-    HomeComponent,
-    AllComponent,
-    ActiveComponent,
-    DeathsComponent,
-    RecoveredComponent
+    DashboardComponent,
+    CasesComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

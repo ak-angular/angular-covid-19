@@ -1,51 +1,26 @@
-<div *ngIf="globalStats" class="my-5">
-    <div class="row">
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card all" routerLink="/all-cases">
-                <img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
-                <div class="card-img-overlay text-center text-primary">
-                    {{ numberWithCommas(globalStats.cases) }}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Total Cases</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card all" routerLink="/active-cases">
-                <img class="card-img-top" src="../../../assets/images/card-2.jpg" alt="Card image cap">
-                <div class="card-img-overlay text-center text-info">
-                    {{ numberWithCommas(globalStats.active) }}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Active Cases</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card all" routerLink="/recovered-cases">
-                <img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
-                <div class="card-img-overlay text-center text-success">
-                    {{ numberWithCommas(globalStats.recovered) }}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Recovered</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card deaths" routerLink="/death-cases">
-                <img class="card-img-top" src="../../../assets/images/card-3.svg" alt="Card image cap">
-                <div class="card-img-overlay text-center text-danger">
-                    {{ numberWithCommas(globalStats.deaths) }}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Deaths</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<app-loading *ngIf="!globalStats"></app-loading>
+<h2 class="mb-3">Country data</h2>
 
-<router-outlet></router-outlet>
+<table *ngIf="stats" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Country</th>
+            <th scope="col">Total Cases</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Active</th>
+            <th scope="col">Deaths</th>
+            <th scope="col">Critical</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of stats; let i = index">
+            <th scope="row">{{ i+1 }}</th>
+            <td> <img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country"> {{ item.country }}</td>
+            <td>{{ item.cases }}</td>
+            <td>{{ item.recovered }}</td>
+            <td>{{ item.active }}</td>
+            <td>{{ item.deaths }}</td>
+            <td>{{ item.critical }}</td>
+        </tr>
+    </tbody>
+</table>
