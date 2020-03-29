@@ -2,34 +2,39 @@
 
 <app-loading *ngIf="isLoading"></app-loading>
 
-<div class="row" *ngIf="!isLoading">
-    <div class="col-4 offset-8">
-        <!-- <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search country"> -->
-        <p class="text-right">Data sorted by: <strong>{{ sortLabel[sortBy] }}</strong></p>
+<div class="container-fluid">
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-7 offset-md-6">
+            <!-- <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search country"> -->
+            <p class="text-right">Data sorted by: <strong>{{ sortLabel[sortBy] }}</strong></p>
+        </div>
     </div>
 </div>
 
-<table [hidden]="isLoading" class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Country</th>
-            <th scope="col">Total Cases</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Active</th>
-            <th scope="col">Deaths</th>
-            <th scope="col">Critical</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of stats; let i = index" [routerLink]="['/country', item.country]">
-            <th scope="row">{{ i+1 }}</th>
-            <td> <img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country"> {{ item.country }}</td>
-            <td>{{ item.cases }}</td>
-            <td>{{ item.recovered }}</td>
-            <td>{{ item.active }}</td>
-            <td>{{ item.deaths }}</td>
-            <td>{{ item.critical }}</td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table [hidden]="isLoading" class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Country</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Active</th>
+                <th scope="col">Deaths</th>
+                <th scope="col">Critical</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of stats; let i = index" [routerLink]="['/country', item.country]">
+                <th scope="row">{{ i+1 }}</th>
+                <td> <img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country"> {{ item.country }}</td>
+                <td>{{ item.cases }}</td>
+                <td>{{ item.recovered }}</td>
+                <td>{{ item.active }}</td>
+                <td>{{ item.deaths }}</td>
+                <td>{{ item.critical }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
