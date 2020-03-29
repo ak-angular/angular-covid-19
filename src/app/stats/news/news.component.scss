@@ -12,8 +12,10 @@ li {
     flex: 1 1 auto;
 
     img {
-        max-width: 150px;
+        font-size: 0.5rem;
         height: 125px;
+        max-width: 150px;
+        overflow: hidden;
     }
 
     h4 {
