@@ -8,7 +8,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  get(url) {
-    return this.http.get(url);
+  get(url, config = {}) {
+    return this.http.get(url, config);
   }
 }

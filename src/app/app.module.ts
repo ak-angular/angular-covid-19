@@ -13,6 +13,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CasesComponent } from './pages/cases/cases.component';
 import { SummaryComponent } from './stats/summary/summary.component';
+import { NewsComponent } from './stats/news/news.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SummaryComponent } from './stats/summary/summary.component';
     FooterComponent,
     DashboardComponent,
     CasesComponent,
-    SummaryComponent
+    SummaryComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
