@@ -18,6 +18,23 @@
         height: 150px;
         width: 100%;
     }
+
+    @media(max-width: 576px) {
+        &-img-overlay {
+            font-size: 1.5rem;
+            line-height: 4rem;
+        }
+
+        &-title {
+            font-size: 1rem;
+        }
+
+        &-img-top {
+            height: 100px;
+        }
+    }
+
+    
 }
 
 .all {
