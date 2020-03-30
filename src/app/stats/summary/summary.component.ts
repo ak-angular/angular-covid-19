@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'stats-summary',
@@ -28,6 +29,12 @@ export class SummaryComponent implements OnInit {
     return this._http.get(url).subscribe(res => {
       this.globalStats = res;
     });
+  }
+
+  formatDate(dateString) {
+    let myMoment: moment.Moment = moment(dateString);
+
+    return myMoment.fromNow();
   }
 
 }

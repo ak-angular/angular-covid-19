@@ -1,13 +1,36 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <div class="container">
-        <a class="navbar-brand" routerLink="/">
-            <img src="../../../assets/images/coronavirus.webp" width="30" height="30" class="d-inline-block align-middle"
-                alt="">
-            Corona Virus
-        </a>
-        <a class="navbar-text" aria-label="COVID-19 on twitter" target="_blank" rel="noopener"
-            href="https://twitter.com/search?q=%23covid19&src=typed_query" title="Twitter">
-            <img src="../assets/images/icon-twitter.svg" alt="Twitter" height="42" />
-        </a>
-    </div>
+<nav class="navbar navbar-expand navbar-light bg-white" style="background-color: #e3f2fd;">
+	<div class="container">
+		<a class="navbar-brand" routerLink="/">
+			<img src="../../../assets/images/coronavirus.webp" width="30" height="30"
+				class="d-inline-block align-middle" alt="">
+			Corona Virus
+		</a>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav text-center mx-auto">
+				<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+					<a class="nav-link" routerLink="/">
+						<svg class="bi bi-house-door-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6.5 10.995V14.5a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5h-4a.5.5 0 01-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+							<path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
+						</svg>
+						<span class="d-none d-md-inline-block ml-2">Home</span> 
+					</a>
+				</li>
+				<li class="nav-item ml-2" routerLinkActive="active">
+					<a class="nav-link" routerLink="/cases">
+						<svg class="bi bi-person-check-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm9.854-2.854a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-1.5-1.5a.5.5 0 01.708-.708L12.5 7.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+						</svg>
+						<span class="d-none d-md-inline ml-2">Report by Country</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<a class="navbar-text" aria-label="COVID-19 on twitter" target="_blank" rel="noopener"
+			href="https://twitter.com/search?q=%23covid19&src=typed_query" title="Twitter">
+			<img src="../assets/images/icon-twitter.svg" alt="Twitter" height="42" />
+		</a>
+	</div>
 </nav>

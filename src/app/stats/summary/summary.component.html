@@ -45,5 +45,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-12 text-right">
+			<small><em>Last updated: </em></small> 
+			<span class="badge badge-pill badge-warning">{{ formatDate(globalStats.updated) }}</span>
+		</div>
+	</div>
 </div>
 <app-loading *ngIf="!globalStats"></app-loading>
