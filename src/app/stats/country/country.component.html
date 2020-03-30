@@ -5,16 +5,16 @@
     </h2>
     <h3>COVID-19 stats:</h3>
     <div class="row">
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-6 col-xl-3">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-header">Case Reported</div>
+                <div class="card-header"><span class="d-none d-sm-inline">Case</span> Reported</div>
                 <div class="card-body">
                     <p>Total: <strong>{{ stats.cases }}</strong></p>
                     <p>Today: <strong>{{ stats.todayCases }}</strong></p>
                 </div>
               </div>
         </div>
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-6 col-xl-3">
             <div class="card text-white bg-danger mb-3">
                 <div class="card-header">Deaths</div>
                 <div class="card-body">
@@ -23,21 +23,21 @@
                 </div>
               </div>
         </div>
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-6 col-xl-3">
             <div class="card text-white bg-success mb-3">
                 <div class="card-header">Recovered</div>
                 <div class="card-body">
                     <p>Total: <strong>{{ stats.recovered }}</strong></p>
-                    <p>Today: <strong>--</strong></p>
+                    <p class="d-none d-xl-block">&nbsp;</p>
                 </div>
               </div>
         </div>
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-6 col-xl-3">
             <div class="card text-white bg-warning mb-3">
                 <div class="card-header">Active</div>
                 <div class="card-body">
                     <p>Total: <strong>{{ stats.active }}</strong></p>
-                    <p>Today: <strong>--</strong></p>
+                    <p class="d-none d-xl-block">&nbsp;</p>
                 </div>
               </div>
         </div>
