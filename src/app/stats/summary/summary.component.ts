@@ -37,4 +37,11 @@ export class SummaryComponent implements OnInit {
     return myMoment.fromNow();
   }
 
+  refreshData() {
+    this.globalStats = undefined;
+    setTimeout(() => {
+      this.fetchGloablStats();
+    }, 500);
+  }
+
 }
