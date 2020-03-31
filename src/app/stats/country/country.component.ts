@@ -44,7 +44,7 @@ export class CountryComponent implements OnInit {
     private route: ActivatedRoute,
     private _location: Location,
     private titleService: Title,
-    private formatterService: FormatterService
+    public formatterService: FormatterService
   ) { 
     
    }

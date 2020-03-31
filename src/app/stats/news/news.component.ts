@@ -11,7 +11,7 @@ export class NewsComponent implements OnInit {
   apiKey: string = '7fd8e67e17f745b48a0febc3c323cc36';
   news: Array<any>;
 
-  constructor(private http: HttpService, private formatterService: FormatterService) { }
+  constructor(private http: HttpService, public formatterService: FormatterService) { }
 
   ngOnInit(): void {
     this.fetchNews();

@@ -25,7 +25,7 @@ export class GlobalComponent implements OnInit {
     private _http: HttpService,
     private route: ActivatedRoute,
     private titleService: Title,
-    private formatterService: FormatterService
+    public formatterService: FormatterService
   ) { }
 
   ngOnInit(): void {

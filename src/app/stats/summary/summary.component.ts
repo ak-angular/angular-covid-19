@@ -11,7 +11,7 @@ export class SummaryComponent implements OnInit {
 
   globalStats: any;
 
-  constructor( private _http: HttpService, private formatterService: FormatterService ) { }
+  constructor( private _http: HttpService, public formatterService: FormatterService ) { }
 
   ngOnInit(): void {
     setTimeout(() => {
