@@ -13,6 +13,7 @@ import {
   ApexFill
 } from "ng-apexcharts";
 import { Title } from '@angular/platform-browser';
+import { FormatterService } from 'src/app/services/formatter.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -42,7 +43,8 @@ export class CountryComponent implements OnInit {
     private _http: HttpService,
     private route: ActivatedRoute,
     private _location: Location,
-    private titleService: Title
+    private titleService: Title,
+    private formatterService: FormatterService
   ) { 
     
    }

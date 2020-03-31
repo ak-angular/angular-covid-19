@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
-import * as moment from 'moment';
+import { FormatterService } from 'src/app/services/formatter.service';
 
 @Component({
   selector: 'stats-summary',
@@ -11,16 +11,12 @@ export class SummaryComponent implements OnInit {
 
   globalStats: any;
 
-  constructor( private _http: HttpService ) { }
+  constructor( private _http: HttpService, private formatterService: FormatterService ) { }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.fetchGloablStats();
     }, 500);
-  }
-
-  numberWithCommas(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   fetchGloablStats() {
@@ -29,12 +25,6 @@ export class SummaryComponent implements OnInit {
     return this._http.get(url).subscribe(res => {
       this.globalStats = res;
     });
-  }
-
-  formatDate(dateString) {
-    let myMoment: moment.Moment = moment(dateString);
-
-    return myMoment.fromNow();
   }
 
   refreshData() {

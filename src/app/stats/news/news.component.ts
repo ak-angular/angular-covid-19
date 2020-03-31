@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
-import * as moment from 'moment';
+import { FormatterService } from 'src/app/services/formatter.service';
 
 @Component({
   selector: 'dashboard-news',
@@ -11,7 +11,7 @@ export class NewsComponent implements OnInit {
   apiKey: string = '7fd8e67e17f745b48a0febc3c323cc36';
   news: Array<any>;
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private formatterService: FormatterService) { }
 
   ngOnInit(): void {
     this.fetchNews();
@@ -24,12 +24,6 @@ export class NewsComponent implements OnInit {
     let url: string = `https://newsapi.org/v2/everything?q=COVID&from=${ fromDate }&sortBy=publishedAt&apiKey=${ this.apiKey }&pageSize=${ pageSize }&page=${ pageNumber }&language=en`;
 
     this.http.get(url).subscribe(res => this.news = res['articles']);
-  }
-
-  formatDate(dateString) {
-    let myMoment: moment.Moment = moment(dateString);
-
-    return myMoment.fromNow();
   }
 
 }

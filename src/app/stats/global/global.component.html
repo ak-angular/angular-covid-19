@@ -27,14 +27,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of (filtered); let i = index" [routerLink]="['/country', item.country]">
-                <th scope="row">{{ i+1 }}</th>
+            <tr *ngFor="let item of (filtered)" [routerLink]="['/country', item.country]">
+                <th scope="row">{{ item.index }}</th>
                 <td> <img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country"> {{ item.country }}</td>
-                <td>{{ item.cases }}</td>
-                <td>{{ item.recovered }}</td>
-                <td>{{ item.active }}</td>
-                <td>{{ item.deaths }}</td>
-                <td>{{ item.critical }}</td>
+                <td>{{ formatterService.number(item.cases) }}</td>
+                <td>{{ formatterService.number(item.recovered) }}</td>
+                <td>{{ formatterService.number(item.active) }}</td>
+                <td>{{ formatterService.number(item.deaths) }}</td>
+                <td>{{ formatterService.number(item.critical) }}</td>
             </tr>
         </tbody>
     </table>

@@ -9,8 +9,8 @@
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header"><span class="d-none d-sm-inline">Case</span> Reported</div>
                 <div class="card-body">
-                    <p>Total: <strong>{{ stats.cases }}</strong></p>
-                    <p>Today: <strong>{{ stats.todayCases }}</strong></p>
+                    <p>Total: <strong>{{ formatterService.number(stats.cases) }}</strong></p>
+                    <p>Today: <strong>{{ formatterService.number(stats.todayCases) }}</strong></p>
                 </div>
               </div>
         </div>
@@ -18,8 +18,8 @@
             <div class="card text-white bg-danger mb-3">
                 <div class="card-header">Deaths</div>
                 <div class="card-body">
-                    <p>Total: <strong>{{ stats.deaths }}</strong></p>
-                    <p>Today: <strong>{{ stats.todayDeaths }}</strong></p>
+                    <p>Total: <strong>{{ formatterService.number(stats.deaths) }}</strong></p>
+                    <p>Today: <strong>{{ formatterService.number(stats.todayDeaths) }}</strong></p>
                 </div>
               </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="card text-white bg-success mb-3">
                 <div class="card-header">Recovered</div>
                 <div class="card-body">
-                    <p>Total: <strong>{{ stats.recovered }}</strong></p>
+                    <p>Total: <strong>{{ formatterService.number(stats.recovered) }}</strong></p>
                     <p class="d-none d-xl-block">&nbsp;</p>
                 </div>
               </div>
@@ -36,7 +36,7 @@
             <div class="card text-white bg-warning mb-3">
                 <div class="card-header">Active</div>
                 <div class="card-body">
-                    <p>Total: <strong>{{ stats.active }}</strong></p>
+                    <p>Total: <strong>{{ formatterService.number(stats.active) }}</strong></p>
                     <p class="d-none d-xl-block">&nbsp;</p>
                 </div>
               </div>
@@ -52,9 +52,9 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ stats.critical }}</td>
-                <td>{{ stats.casesPerOneMillion }}</td>
-                <td>{{ stats.deathsPerOneMillion }}</td>
+                <td>{{ formatterService.number(stats.critical) }}</td>
+                <td>{{ formatterService.number(stats.casesPerOneMillion) }}</td>
+                <td>{{ formatterService.number(stats.deathsPerOneMillion) }}</td>
             </tr>
         </tbody>
     </table>

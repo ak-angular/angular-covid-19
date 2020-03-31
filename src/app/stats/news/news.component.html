@@ -11,7 +11,7 @@
                     <h4 class="card-title">
                         <a [href]="article.url" target="_blank">{{ article.title }}</a>
                     </h4>
-                    <p class="card-text text-right">{{ article.source.name }} <span class="badge badge-pill badge-secondary">{{ formatDate(article.publishedAt) }}</span></p>
+                    <p class="card-text text-right">{{ article.source.name }} <span class="badge badge-pill badge-secondary">{{ formatterService.date(article.publishedAt) }}</span></p>
                 </div>
             </div>
         </div>    

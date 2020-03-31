@@ -4,7 +4,7 @@
 			<div class="card all" routerLink="/cases">
 				<img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
 				<div class="card-img-overlay text-center text-primary">
-					{{ numberWithCommas(globalStats.cases) }}
+					{{ formatterService.number(globalStats.cases) }}
 				</div>
 				<div class="card-body">
 					<h5 class="card-title text-center">Total Cases</h5>
@@ -15,7 +15,7 @@
 			<div class="card all" [routerLink]="['/cases', 'active']">
 				<img class="card-img-top" src="../../../assets/images/card-2.jpg" alt="Card image cap">
 				<div class="card-img-overlay text-center text-info">
-					{{ numberWithCommas(globalStats.active) }}
+					{{ formatterService.number(globalStats.active) }}
 				</div>
 				<div class="card-body">
 					<h5 class="card-title text-center">Active Cases</h5>
@@ -26,7 +26,7 @@
 			<div class="card all" [routerLink]="['/cases', 'recovered']">
 				<img class="card-img-top" src="../../../assets/images/card-1.jpg" alt="Card image cap">
 				<div class="card-img-overlay text-center text-success">
-					{{ numberWithCommas(globalStats.recovered) }}
+					{{ formatterService.number(globalStats.recovered) }}
 				</div>
 				<div class="card-body">
 					<h5 class="card-title text-center">Recovered</h5>
@@ -37,7 +37,7 @@
 			<div class="card deaths" [routerLink]="['/cases', 'deaths']">
 				<img class="card-img-top" src="../../../assets/images/card-3.svg" alt="Card image cap">
 				<div class="card-img-overlay text-center text-danger">
-					{{ numberWithCommas(globalStats.deaths) }}
+					{{ formatterService.number(globalStats.deaths) }}
 				</div>
 				<div class="card-body">
 					<h5 class="card-title text-center">Deaths</h5>
@@ -47,7 +47,7 @@
 	</div>
 	<div class="row">
 		<div class="col-12 text-right">
-			<small><em>Last updated: {{ formatDate(globalStats.updated) }}</em></small> 
+			<small><em>Last updated: {{ formatterService.date(globalStats.updated) }}</em></small> 
 			<button class="badge badge-pill badge-warning ml-3" (click)="refreshData()">
 				<svg class="bi bi-arrow-clockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" d="M3.17 6.706a5 5 0 017.103-3.16.5.5 0 10.454-.892A6 6 0 1013.455 5.5a.5.5 0 00-.91.417 5 5 0 11-9.375.789z" clip-rule="evenodd"/>

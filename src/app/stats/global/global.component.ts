@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { FormatterService } from 'src/app/services/formatter.service';
 
 @Component({
   selector: 'stats-global',
@@ -23,7 +24,8 @@ export class GlobalComponent implements OnInit {
   constructor(
     private _http: HttpService,
     private route: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private formatterService: FormatterService
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +47,9 @@ export class GlobalComponent implements OnInit {
 
     return this._http.get(url).subscribe(res => {
       this.stats = res;
+
+      // add index
+      this.stats.forEach((item: any, index: number) => item.index = index + 1);
       this.filtered = this.stats;
 
       setTimeout(() => this.isLoading = false);
