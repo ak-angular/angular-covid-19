@@ -34,7 +34,7 @@ export class GlobalComponent implements OnInit {
         this.sortBy = type;
       }
 
-      this.titleService.setTitle('COVID 19 - Stats Tracker | Report by Country | ' + this.sortLabel[type]);
+      this.setTitle();
       this.fetchAll();
     });
   }
@@ -52,7 +52,12 @@ export class GlobalComponent implements OnInit {
   sortData(sortType) {
     this.sortBy = sortType;
     this.isLoading = true;
+    this.setTitle();
     this.fetchAll();
+  }
+
+  setTitle() {
+    this.titleService.setTitle('COVID 19 - Stats Tracker | Report by Country | ' + this.sortLabel[this.sortBy]);
   }
 
 }
