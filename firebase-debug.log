@@ -1,0 +1,34 @@
+[debug] [2020-03-31T06:29:16.739Z] ----------------------------------------------------------------------
+[debug] [2020-03-31T06:29:16.740Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-03-31T06:29:16.740Z] CLI Version:   7.16.1
+[debug] [2020-03-31T06:29:16.740Z] Platform:      darwin
+[debug] [2020-03-31T06:29:16.741Z] Node Version:  v12.16.1
+[debug] [2020-03-31T06:29:16.741Z] Time:          Tue Mar 31 2020 11:59:16 GMT+0530 (India Standard Time)
+[debug] [2020-03-31T06:29:16.741Z] ----------------------------------------------------------------------
+[debug] [2020-03-31T06:29:16.741Z] 
+[debug] [2020-03-31T06:29:16.751Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-31T06:29:16.751Z] > authorizing via signed-in user
+[debug] [2020-03-31T06:29:16.751Z] [iam] checking project covid-19-c69ff for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-03-31T06:29:16.754Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-31T06:29:16.754Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-31T06:29:17.153Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-31T06:29:17.169Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/covid-19-c69ff:testIamPermissions  
+
+[debug] [2020-03-31T06:29:19.024Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-31T06:29:19.026Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/covid-19-c69ff  
+ 
+[debug] [2020-03-31T06:29:19.607Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'covid-19-c69ff'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-03-31T06:29:19.610Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/covid-19-c69ff/versions  
+
+[debug] [2020-03-31T06:29:21.970Z] <<< HTTP RESPONSE 200
+[info] i  hosting[covid-19-c69ff]: beginning deploy...
+[info] i  hosting[covid-19-c69ff]: found 70 files in dist/covid19
+[debug] [2020-03-31T06:29:22.987Z] [hosting] hash cache [ZGlzdC9jb3ZpZDE5] stored for 70 files
+[debug] [2020-03-31T06:29:22.987Z] [hosting][hash queue][FINAL]
+[debug] [2020-03-31T06:29:22.987Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/covid-19-c69ff/versions/01ed58a242e47f16:populateFiles  
+ <request body omitted>
