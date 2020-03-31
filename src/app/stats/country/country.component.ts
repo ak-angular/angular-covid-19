@@ -12,6 +12,7 @@ import {
   ApexLegend,
   ApexFill
 } from "ng-apexcharts";
+import { Title } from '@angular/platform-browser';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -40,7 +41,8 @@ export class CountryComponent implements OnInit {
   constructor(
     private _http: HttpService,
     private route: ActivatedRoute,
-    private _location: Location
+    private _location: Location,
+    private titleService: Title
   ) { 
     
    }
@@ -112,6 +114,7 @@ export class CountryComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.countryName = params.get('countryName');
+      this.titleService.setTitle('COVID 19 - Stats Tracker | ' + this.countryName);
       this.fetchAll();
       this.fetchHistoricalData();
     });

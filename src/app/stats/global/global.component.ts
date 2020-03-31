@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'stats-global',
@@ -18,7 +19,11 @@ export class GlobalComponent implements OnInit {
     active: 'Active Cases'
   };
 
-  constructor(private _http: HttpService, private route: ActivatedRoute) { }
+  constructor(
+    private _http: HttpService,
+    private route: ActivatedRoute,
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
     
@@ -28,6 +33,8 @@ export class GlobalComponent implements OnInit {
       if(type) {
         this.sortBy = type;
       }
+
+      this.titleService.setTitle('COVID 19 - Stats Tracker | Report by Country | ' + this.sortLabel[type]);
       this.fetchAll();
     });
   }
@@ -40,6 +47,12 @@ export class GlobalComponent implements OnInit {
 
       setTimeout(() => this.isLoading = false);
     });
+  }
+
+  sortData(sortType) {
+    this.sortBy = sortType;
+    this.isLoading = true;
+    this.fetchAll();
   }
 
 }

@@ -7,10 +7,10 @@ import { CountryComponent } from './stats/country/country.component';
 
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'cases/:type', component: CasesComponent },
-  { path: 'cases', component: CasesComponent },
-  { path: 'country/:countryName', component: CountryComponent },
+  { path: '', component: DashboardComponent, data: {title: 'COVID 19 - Stats Tracker | Dashboard'} },
+  { path: 'cases/:type', component: CasesComponent, data: {title: 'COVID 19 - Stats Tracker | Report by Country'} },
+  { path: 'cases', component: CasesComponent, data: {title: 'COVID 19 - Stats Tracker | Report by Country'} },
+  { path: 'country/:countryName', component: CountryComponent, data: {title: 'COVID 19 - Stats Tracker | Country'} },
   { path: '**', component: DashboardComponent }
 ];
 
