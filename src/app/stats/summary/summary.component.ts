@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { FormatterService } from 'src/app/services/formatter.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'stats-summary',
@@ -11,9 +12,14 @@ export class SummaryComponent implements OnInit {
 
   globalStats: any;
 
-  constructor( private _http: HttpService, public formatterService: FormatterService ) { }
+  constructor(
+    private _http: HttpService,
+    private titleService: Title,
+    public formatterService: FormatterService
+    ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('COVID 19 - Stats Tracker | Dashboard');
     setTimeout(() => {
       this.fetchGloablStats();
     }, 500);
