@@ -64,7 +64,7 @@ export class CountryComponent implements OnInit {
       chart: {
         type: "area",
         height: 350,
-        stacked: true,
+        stacked: false,
         events: {
           selection: function(chart, e) {
             console.log(new Date(e.xaxis.min));
@@ -79,7 +79,7 @@ export class CountryComponent implements OnInit {
         type: "gradient",
         gradient: {
           opacityFrom: 0.1,
-          opacityTo: 0.8
+          opacityTo: 0.2
         }
       },
       legend: {
