@@ -11,6 +11,7 @@ import { Title } from '@angular/platform-browser';
 export class GlobalComponent implements OnInit {
   isLoading: boolean = true;
   stats: any = [];
+  filtered: any = [];
   sortBy: string = 'cases';
   sortLabel: Object = {
     cases: 'Total Cases Reported',
@@ -44,6 +45,7 @@ export class GlobalComponent implements OnInit {
 
     return this._http.get(url).subscribe(res => {
       this.stats = res;
+      this.filtered = this.stats;
 
       setTimeout(() => this.isLoading = false);
     });
@@ -58,6 +60,19 @@ export class GlobalComponent implements OnInit {
 
   setTitle() {
     this.titleService.setTitle('COVID 19 - Stats Tracker | Report by Country | ' + this.sortLabel[this.sortBy]);
+  }
+
+  filterCountry(event) {
+    let term = event.target.value.toLowerCase();
+    let match = new RegExp(term, "gi");
+
+    if(!term) {
+      this.filtered = this.stats;
+      return;
+    }
+
+    //
+    this.filtered = this.stats.filter(item => item.country.match(match));
   }
 
 }
