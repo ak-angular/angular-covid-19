@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { FormatterService } from 'src/app/services/formatter.service';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'stats-global',
@@ -25,6 +26,7 @@ export class GlobalComponent implements OnInit {
     private _http: HttpService,
     private route: ActivatedRoute,
     private titleService: Title,
+    private configService: ConfigService,
     public formatterService: FormatterService
   ) { }
 
@@ -43,7 +45,7 @@ export class GlobalComponent implements OnInit {
   }
 
   fetchAll() {
-    let url = 'https://corona.lmao.ninja/countries?sort=' + this.sortBy;
+    let url = this.configService.get('countriesApiUrl') + '?sort=' + this.sortBy;
 
     return this._http.get(url).subscribe(res => {
       this.stats = res;

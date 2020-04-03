@@ -18,4 +18,14 @@ export class FormatterService {
     return myMoment.fromNow();
   }
 
+  param(queryObj): string {
+    let queryString = [];
+
+    for(let key in queryObj) { 
+       queryString.push(`${ key }=${ queryObj[key] }`);
+    }
+
+    return queryString.join('&');
+  }
+
 }

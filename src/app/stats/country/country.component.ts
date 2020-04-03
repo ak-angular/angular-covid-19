@@ -14,6 +14,7 @@ import {
 } from "ng-apexcharts";
 import { Title } from '@angular/platform-browser';
 import { FormatterService } from 'src/app/services/formatter.service';
+import { ConfigService } from 'src/app/services/config.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -44,6 +45,7 @@ export class CountryComponent implements OnInit {
     private route: ActivatedRoute,
     private _location: Location,
     private titleService: Title,
+    private configService: ConfigService,
     public formatterService: FormatterService
   ) { 
     
@@ -126,7 +128,7 @@ export class CountryComponent implements OnInit {
   }
 
   fetchAll() {
-    let url = 'https://corona.lmao.ninja/countries/' + this.countryName;
+    let url = this.configService.get('countriesApiUrl') + this.countryName;
 
     return this._http.get(url).subscribe(res => {
       this.stats = res;
@@ -138,7 +140,7 @@ export class CountryComponent implements OnInit {
   }
 
   fetchHistoricalData() {
-    let url = 'https://corona.lmao.ninja/v2/historical/' + this.countryName;
+    let url = this.configService.get('historicalApiUrl') + this.countryName;
 
     return this._http.get(url).subscribe(res => {
       this.timeline = res['timeline'];
