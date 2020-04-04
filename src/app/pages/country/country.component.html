@@ -69,18 +69,7 @@
     </table>
 
     <h3 class="mt-5 mb-3">Historical Data:</h3>
-    <div id="chart">
-        <apx-chart
-          [series]="chartOptions.series"
-          [chart]="chartOptions.chart"
-          [xaxis]="chartOptions.xaxis"
-          [dataLabels]="chartOptions.dataLabels"
-          [yaxis]="chartOptions.yaxis"
-          [colors]="chartOptions.colors"
-          [legend]="chartOptions.legend"
-          [fill]="chartOptions.fill"
-        ></apx-chart>
-      </div>
+    <historical-chart [timeline]="timeline"></historical-chart>
 
     <div class="mt-5 text-right">
         <button type="button" class="btn btn-light" routerLink="/">Home</button>

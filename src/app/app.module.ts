@@ -20,6 +20,7 @@ import { LoadingComponent } from './common/loading/loading.component';
 import { GlobalComponent } from './pages/country-table/global/global.component';
 import { SummaryComponent } from './pages/dashboard/summary/summary.component';
 import { NewsComponent } from './pages/dashboard/news/news.component';
+import { HistoricalChartComponent } from './pages/country/historical-chart/historical-chart.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NewsComponent } from './pages/dashboard/news/news.component';
     SummaryComponent,
     NewsComponent,
     CountryTablePageComponent,
-    CountryPageComponent
+    CountryPageComponent,
+    HistoricalChartComponent
   ],
   imports: [
     BrowserModule,
