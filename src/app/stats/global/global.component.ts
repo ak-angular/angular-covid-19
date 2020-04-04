@@ -51,7 +51,7 @@ export class GlobalComponent implements OnInit {
       this.stats = res;
 
       // add index
-      this.stats.forEach((item: any, index: number) => item.index = index + 1);
+      this.stats.forEach((item: any, index: number) => item.index = index);
       this.filtered = this.stats;
 
       setTimeout(() => this.isLoading = false);

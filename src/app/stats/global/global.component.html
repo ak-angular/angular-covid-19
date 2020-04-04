@@ -28,7 +28,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of (filtered)" [routerLink]="['/country', item.country]">
-                <th scope="row">{{ item.index }}</th>
+                <th scope="row">{{ item.index || '' }}</th>
                 <td> <img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country"> {{ item.country }}</td>
                 <td>{{ formatterService.number(item.cases) }}</td>
                 <td>{{ formatterService.number(item.recovered) }}</td>
