@@ -9,33 +9,33 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { DashboardPageComponent } from './pages/dashboard/dashboard.component';
-import { CountryTablePageComponent } from './pages/country-table/country-table.component';
 import { CountryPageComponent } from './pages/country/country.component';
+import { CountryListPageComponent } from './pages/country-list/country-list.component';
 
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { MainComponent } from './common/main/main.component';
 import { LoadingComponent } from './common/loading/loading.component';
 
-import { GlobalComponent } from './pages/country-table/global/global.component';
 import { SummaryComponent } from './pages/dashboard/summary/summary.component';
 import { NewsComponent } from './pages/dashboard/news/news.component';
 import { HistoricalChartComponent } from './pages/country/historical-chart/historical-chart.component';
+import { CountryTableComponent } from './pages/country-list/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoadingComponent,
-    GlobalComponent,
     MainComponent,
     FooterComponent,
     DashboardPageComponent,
     SummaryComponent,
     NewsComponent,
-    CountryTablePageComponent,
     CountryPageComponent,
-    HistoricalChartComponent
+    HistoricalChartComponent,
+    CountryListPageComponent,
+    CountryTableComponent
   ],
   imports: [
     BrowserModule,

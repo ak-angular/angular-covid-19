@@ -1,0 +1,16 @@
+<h2 class="mb-3">Country data</h2>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="container-fluid" *ngIf="!isLoading">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-8 offset-md-6">
+            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search country" (keyup)="filterCountry($event)" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-7 offset-md-6">
+            <p class="text-right">Data sorted by: <strong>{{ sortLabel[sortBy] }}</strong></p>
+        </div>
+    </div>
+</div>
+
+<country-table [list]="displayData" [sortBy]="sortBy" (notifyOnSort)="handleOnSort($event)"></country-table>

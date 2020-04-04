@@ -1,0 +1,39 @@
+<div class="table-responsive">
+	<table [hidden]="!list.length" class="table table-bordered table-hover">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Country</th>
+				<th scope="col" class="clickable" 
+					(click)="sortData('cases')"
+					[class]="{'text-primary': sortBy === 'cases'}">Total Cases</th>
+				<th scope="col" class="clickable" 
+					(click)="sortData('recovered')"
+					[class]="{'text-success': sortBy === 'recovered'}">Recovered</th>
+				<th scope="col" class="clickable" 
+					(click)="sortData('active')"
+					[class]="{'text-info': sortBy === 'active'}">Active</th>
+				<th scope="col" class="clickable" 
+					(click)="sortData('deaths')"
+					[class]="{'text-danger': sortBy === 'deaths'}">Deaths</th>
+				<th scope="col" class="clickable" 
+					(click)="sortData('critical')"
+					[class]="{'text-danger': sortBy === 'critical'}">Critical</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of list" [routerLink]="['/country', item.country]">
+				<th scope="row">{{ item.index || '' }}</th>
+				<td>
+					<img [src]="item.countryInfo.flag" height="10" width="16" class="mr-1" [alt]="item.country">
+					{{ item.country }}
+				</td>
+				<td>{{ formatterService.number(item.cases) }}</td>
+				<td>{{ formatterService.number(item.recovered) }}</td>
+				<td>{{ formatterService.number(item.active) }}</td>
+				<td>{{ formatterService.number(item.deaths) }}</td>
+				<td>{{ formatterService.number(item.critical) }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
