@@ -32,7 +32,7 @@ export type ChartOptions = {
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
-export class CountryComponent implements OnInit {
+export class CountryPageComponent implements OnInit {
   stats: any = [];
   timeline: any = [];
   countryName: string;

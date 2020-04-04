@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
-  selector: 'stats-summary',
+  selector: 'dashboard-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.scss']
 })
