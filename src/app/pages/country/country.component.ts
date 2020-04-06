@@ -43,10 +43,6 @@ export class CountryPageComponent implements OnInit {
     });
   }
 
-  goBack() {
-    this._location.back();
-  }
-
   fetchHistoricalData() {
     let url = this.configService.get('historicalApiUrl') + this.countryName;
 
