@@ -29,9 +29,9 @@
 					{{ item.country }}
 				</td>
 				<td>{{ formatterService.number(item.cases) }}</td>
-				<td>{{ formatterService.number(item.recovered) }}</td>
+				<td class="text-success">{{ formatterService.number(item.recovered) }}</td>
 				<td>{{ formatterService.number(item.active) }}</td>
-				<td>{{ formatterService.number(item.deaths) }}</td>
+				<td class="text-danger">{{ formatterService.number(item.deaths) }}</td>
 				<td>{{ formatterService.number(item.critical) }}</td>
 			</tr>
 		</tbody>
