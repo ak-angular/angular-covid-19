@@ -52,7 +52,7 @@ export class CountryListPageComponent implements OnInit {
       this.responseData = res;
 
       // add index
-      this.responseData.forEach((item: any, index: number) => item.index = index);
+      this.responseData.forEach((item: any, index: number) => item.index = index + 1);
       this.displayData = this.responseData;
 
       setTimeout(() => this.isLoading = false);
