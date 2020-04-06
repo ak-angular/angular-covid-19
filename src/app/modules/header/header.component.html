@@ -1,0 +1,24 @@
+<mat-toolbar color="accent">
+  <div class="logo" routerLink="/">
+    <img src="../../../assets/images/Corona.svg" alt="COVID-19" class="logo-image" />
+    <span class="logo-text">Corona Virus</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="icon-text" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+    <span class="text">Home</span>
+  </div>
+
+  <div class="icon-text" routerLink="/cases" routerLinkActive="active">
+    <mat-icon aria-hidden="false" aria-label="view_list icon">view_list</mat-icon>
+    <span class="text">Report by Country</span>
+  </div>
+
+  <div class="icon-text" routerLink="/world-map" routerLinkActive="active">
+    <mat-icon aria-hidden="false" aria-label="public icon">public</mat-icon>
+    <span class="text">World Map</span>
+  </div>
+  
+</mat-toolbar>
