@@ -49,10 +49,16 @@ export class CountryListPageComponent implements OnInit {
     this.displayData = [];
 
     return this._http.get(url).subscribe(res => {
+      let indexFix = 1;
       this.responseData = res;
 
+      // If world data comes on first index, let's not add one number to index
+      if(this.responseData[0].country.indexOf(/world/gi) !== -1) {
+        indexFix = 0;
+      }
+
       // add index
-      this.responseData.forEach((item: any, index: number) => item.index = index + 1);
+      this.responseData.forEach((item: any, index: number) => item.index = index + indexFix);
       this.displayData = this.responseData;
 
       setTimeout(() => this.isLoading = false);
