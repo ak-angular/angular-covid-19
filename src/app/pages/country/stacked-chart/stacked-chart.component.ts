@@ -127,9 +127,11 @@ export class StackedChartComponent implements OnChanges {
 
   generateCategories(data = {}) {
     let categories = Object.keys(data);
+    let oneDay = 86400000; // one day in ms
+
     categories.shift(); // remove first one
 
-    return categories.map(item => new Date(item).getTime());
+    return categories.map(item => new Date(item).getTime() + oneDay);
   }
 
 }
