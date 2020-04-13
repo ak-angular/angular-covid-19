@@ -19,7 +19,6 @@ import { LoadingComponent } from './common/loading/loading.component';
 
 import { SummaryComponent } from './pages/dashboard/summary/summary.component';
 import { NewsComponent } from './pages/dashboard/news/news.component';
-import { HistoricalChartComponent } from './pages/country/historical-chart/historical-chart.component';
 import { CountryTableComponent } from './pages/country-list/table/table.component';
 import { StackedChartComponent } from './pages/country/stacked-chart/stacked-chart.component';
 import { AreaChartComponent } from './pages/country/area-chart/area-chart.component';
@@ -35,7 +34,6 @@ import { AreaChartComponent } from './pages/country/area-chart/area-chart.compon
     SummaryComponent,
     NewsComponent,
     CountryPageComponent,
-    HistoricalChartComponent,
     CountryListPageComponent,
     CountryTableComponent,
     StackedChartComponent,
