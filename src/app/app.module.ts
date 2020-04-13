@@ -21,6 +21,8 @@ import { SummaryComponent } from './pages/dashboard/summary/summary.component';
 import { NewsComponent } from './pages/dashboard/news/news.component';
 import { HistoricalChartComponent } from './pages/country/historical-chart/historical-chart.component';
 import { CountryTableComponent } from './pages/country-list/table/table.component';
+import { StackedChartComponent } from './pages/country/stacked-chart/stacked-chart.component';
+import { AreaChartComponent } from './pages/country/area-chart/area-chart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CountryTableComponent } from './pages/country-list/table/table.componen
     CountryPageComponent,
     HistoricalChartComponent,
     CountryListPageComponent,
-    CountryTableComponent
+    CountryTableComponent,
+    StackedChartComponent,
+    AreaChartComponent
   ],
   imports: [
     BrowserModule,

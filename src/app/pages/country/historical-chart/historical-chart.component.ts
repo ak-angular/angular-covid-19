@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, Input, OnChanges } from '@angular/core';
+import { Component, ViewChild, Input, OnChanges } from '@angular/core';
 import {
   ChartComponent,
   ApexAxisChartSeries,
   ApexChart,
   ApexXAxis,
   ApexDataLabels,
+  ApexResponsive,
   ApexYAxis,
   ApexLegend,
   ApexFill
@@ -15,6 +16,7 @@ export type ChartOptions = {
   chart: ApexChart;
   xaxis: ApexXAxis;
   dataLabels: ApexDataLabels;
+  responsive: ApexResponsive[];
   yaxis: ApexYAxis;
   colors: string[];
   legend: ApexLegend;
@@ -35,10 +37,10 @@ export class HistoricalChartComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-    this.generateHistoricalChart(this.timeline);
+    this.initChart(this.timeline);
   }
 
-  generateHistoricalChart(chartData) {
+  initChart(chartData) {
     this.chartOptions = {
       series: [
         {
@@ -64,6 +66,18 @@ export class HistoricalChartComponent implements OnChanges {
           }
         }
       },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: "bottom",
+              offsetX: -10,
+              offsetY: 5
+            }
+          }
+        }
+      ],
       colors: ["#008FFB", "#dc3545", "#00E396"],
       dataLabels: {
         enabled: false
