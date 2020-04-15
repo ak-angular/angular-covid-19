@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  logoText = 'Corona Virus';
+
   constructor() { }
 
   ngOnInit(): void {

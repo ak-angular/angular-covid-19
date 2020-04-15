@@ -30,7 +30,7 @@ export type ChartOptions = {
 export class StackedChartComponent implements OnChanges {
   @Input() timeline: Array<any>;
   @ViewChild("chart") chart: ChartComponent;
-  
+
   public chartOptions: Partial<ChartOptions>;
 
   constructor() { }
@@ -98,11 +98,11 @@ export class StackedChartComponent implements OnChanges {
         opacity: 1,
         // colors: ["#008FFB", "#00E396", "#dc3545"]
       }
-      
+
     };
   }
 
-  generateSeries = function(data: any = {}) {
+  generateSeries = function (data: any = {}) {
     let series = [];
     let dates = Object.keys(data);
 
@@ -110,12 +110,12 @@ export class StackedChartComponent implements OnChanges {
      * just observed that chart show one day behind data,
      * so added one day in ms for each data in series for the correction
      */
-    for(let i = 0; i < dates.length; i++) {
+    for (let i = 0; i < dates.length; i++) {
       let currentDate = dates[i];
       let currentValue = data[currentDate];
       let lastDate;
 
-      if(i) {
+      if (i) {
         lastDate = dates[i - 1];
         currentValue = currentValue - data[lastDate];
         series.push(currentValue);

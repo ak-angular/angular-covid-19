@@ -1,81 +1,107 @@
 <section *ngIf="stats">
-    <h2 class="mt-3 mb-5">
-        <img *ngIf="stats.countryInfo" src="{{ stats.countryInfo.flag }}" class="align-baseline" />  
-        {{ stats.country }}
-    </h2>
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <h3>COVID-19 stats:</h3>
-        </div>
-        <div class="col-12 col-md-6 pb-2 text-right">
-            <small><em>Last updated: {{ formatterService.date(stats.updated) }}</em></small>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-6 col-xl-3">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-header"><span class="d-none d-sm-inline">Case</span> Reported</div>
-                <div class="card-body">
-                    <p>Total: <strong>{{ formatterService.number(stats.cases) }}</strong></p>
-                    <p>Today: <strong>{{ formatterService.number(stats.todayCases) }}</strong></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-6 col-xl-3">
-            <div class="card text-white bg-danger mb-3">
-                <div class="card-header">Deaths</div>
-                <div class="card-body">
-                    <p>Total: <strong>{{ formatterService.number(stats.deaths) }}</strong></p>
-                    <p>Today: <strong>{{ formatterService.number(stats.todayDeaths) }}</strong></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-6 col-xl-3">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-header">Recovered</div>
-                <div class="card-body">
-                    <p>Total: <strong>{{ formatterService.number(stats.recovered) }}</strong></p>
-                    <p class="d-none d-xl-block">&nbsp;</p>
-                </div>
-              </div>
-        </div>
-        <div class="col-6 col-xl-3">
-            <div class="card text-white bg-warning mb-3">
-                <div class="card-header">Active</div>
-                <div class="card-body">
-                    <p>Total: <strong>{{ formatterService.number(stats.active) }}</strong></p>
-                    <p class="d-none d-xl-block">&nbsp;</p>
-                </div>
-              </div>
-        </div>
-    </div>
+	<h2 class="mt-3 mb-5">
+		<img *ngIf="stats.countryInfo" src="{{ stats.countryInfo.flag }}" class="align-baseline" />
+		{{ stats.country }}
+	</h2>
+	<div class="row">
+		<div class="col s12 m6">
+			<h3>COVID-19 stats:</h3>
+		</div>
+		<div class="col s12 m6 right-align updated-at">
+			<small><em>Last updated: {{ formatterService.date(stats.updated) }}</em></small>
+		</div>
+	</div>
 
-    <h3 class="mt-5">More Information:</h3>
-    <table class="table table-bordered my-3">
-        <thead>
-            <th scope="col">Critical</th>
-            <th scope="col">Cases per 1M</th>
-            <th scope="col">Deaths per 1M</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ formatterService.number(stats.critical) }}</td>
-                <td>{{ formatterService.number(stats.casesPerOneMillion) }}</td>
-                <td>{{ formatterService.number(stats.deathsPerOneMillion) }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<div class="row">
+		<div class="col s6 xl3">
+			<div class="card blue darken-1">
+				<div class="card-content white-text">
+					<span class="card-title"><span class="hide-on-small-only">Case</span> Reported</span>
+				</div>
+				<div class="card-action white-text">
+					<p>Total: <strong>{{ formatterService.number(stats.cases) }}</strong></p>
+					<p>Today: <strong>{{ formatterService.number(stats.todayCases) }}</strong></p>
+				</div>
+			</div>
+		</div>
+		<div class="col s6 xl3">
+			<div class="card red darken-3">
+				<div class="card-content white-text">
+					<span class="card-title">Deaths</span>
+				</div>
+				<div class="card-action white-text">
+					<p>Total: <strong>{{ formatterService.number(stats.deaths) }}</strong></p>
+					<p>Today: <strong>{{ formatterService.number(stats.todayDeaths) }}</strong></p>
+				</div>
+			</div>
+		</div>
+		<div class="col s6 xl3">
+			<div class="card green darken-1">
+				<div class="card-content white-text">
+					<span class="card-title">Recovered</span>
+				</div>
+				<div class="card-action white-text">
+					<p>Total: <strong>{{ formatterService.number(stats.recovered) }}</strong></p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s6 xl3">
+			<div class="card yellow darken-3">
+				<div class="card-content white-text">
+					<span class="card-title">Active</span>
+				</div>
+				<div class="card-action white-text">
+					<p>Total: <strong>{{ formatterService.number(stats.active) }}</strong></p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <h3 class="mt-5 mb-3">Historical Data:</h3>
-    <area-chart [timeline]="timeline"></area-chart>
+	<div class="card">
+		<div class="card-content">
+			<h3>More Information:</h3>
+			<table class="more-info">
+				<thead>
+					<tr>
+						<th scope="col">Critical</th>
+						<th scope="col">Cases per 1M</th>
+						<th scope="col">Deaths per 1M</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{ formatterService.number(stats.critical) }}</td>
+						<td>{{ formatterService.number(stats.casesPerOneMillion) }}</td>
+						<td>{{ formatterService.number(stats.deathsPerOneMillion) }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
-    <h3 class="mt-5 mb-3">Daily Report:</h3>
-    <stacked-chart [timeline]="timeline"></stacked-chart>
+	<div class="card">
+		<div class="card-content">
+			<h3>Historical Data:</h3>
+			<area-chart [timeline]="timeline"></area-chart>
+		</div>
+	</div>
 
-    <div class="mt-5 text-right">
-        <button type="button" class="btn btn-light" routerLink="/">Home</button>
-        <button type="button" class="btn btn-info ml-2" routerLink="/cases">Go back to list page</button>
-    </div>
-    
+	<div class="card">
+		<div class="card-content">
+			<h3>Daily Report:</h3>
+			<stacked-chart [timeline]="timeline"></stacked-chart>
+		</div>
+	</div>
+
+	<div class="btn-group right-align">
+		<a class="waves-effect waves-light btn white blue-text" routerLink="/">
+			<i class="material-icons left hide-on-med-and-down">home</i>Home
+		</a>
+		<a class="waves-effect waves-light btn blue" routerLink="/cases">
+			<i class="material-icons left hide-on-med-and-down">public</i>Go back to list page
+		</a>
+	</div>
+
 </section>

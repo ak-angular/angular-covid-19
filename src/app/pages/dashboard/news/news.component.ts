@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit {
       q: 'COVID',
       from: '2020-03-16',
       apiKey,
-      pageSize: 6,
+      pageSize: 10,
       sortBy: 'publishedAt',
       language: 'en',
       page: 1

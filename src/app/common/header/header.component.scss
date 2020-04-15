@@ -1,13 +1,56 @@
+.brand-logo {
+	color: #000;
+	font-size: 20px;
+	font-weight: 700;
+	position: static;
+
+	img {
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		transform: none;
+	}
+}
+
+li {
+	a {
+		color: #607d8b;
+		font-weight: 700;
+	
+		&:hover {
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		span {
+			margin-left: 5px;
+		}
+	}
+
+	&.active {
+		a {
+			color: #007bff;
+		}
+	}
+
+	.material-icons {
+		display: inline-flex;
+    	vertical-align: top;
+	}
+}
+
 .navbar {
-    border-bottom: 1px solid #CCC;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.05);
+	border-bottom: 1px solid #CCC;
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.05);
 
-    &-brand {
-        font-weight: 700;
-    }
+	&-brand {
+		font-weight: 700;
+	}
 
-    .active a{
-        color: #007bff;
-        font-weight: 700;
-    }
+	.active a{
+		color: #007bff;
+		font-weight: 700;
+	}
 }

@@ -1,4 +1,29 @@
-<nav class="navbar navbar-expand navbar-light bg-white" style="background-color: #e3f2fd;">
+<div class="navbar-fixed">
+	<nav class="white">
+		<div class="container nav-wrapper">
+			<a routerLink="/" class="brand-logo">
+				<img src="../../../assets/images/coronavirus.webp" width="30" height="30" alt="CoronaVirous Logo Image">
+				<span class="text-black">{{ logoText }}</span>
+			</a>
+			<ul class="right">
+				<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+					<a routerLink="/">
+						<i class="large material-icons">home</i> 
+						<span class="hide-on-med-and-down">Home</span>
+					</a>
+				</li>
+				<li routerLinkActive="active">
+					<a routerLink="/cases">
+						<i class="large material-icons">public</i>
+						<span class="hide-on-med-and-down">Report by Country</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<!-- <nav class="navbar navbar-expand navbar-light bg-white" style="background-color: #e3f2fd;">
 	<div class="container">
 		<a class="navbar-brand" routerLink="/">
 			<img src="../../../assets/images/coronavirus.webp" width="30" height="30"
@@ -33,4 +58,4 @@
 			<img src="../assets/images/icon-twitter.svg" alt="Twitter" height="42" />
 		</a>
 	</div>
-</nav>
+</nav> -->

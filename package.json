@@ -21,6 +21,7 @@
     "@angular/router": "~9.1.0",
     "@angular/service-worker": "~9.1.0",
     "apexcharts": "^3.17.1",
+    "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
     "ng-apexcharts": "^1.2.2",
     "rxjs": "~6.5.4",

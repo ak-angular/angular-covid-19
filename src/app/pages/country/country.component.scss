@@ -4,3 +4,50 @@ img {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     height: 46px;
 }
+
+.card-action {
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+}
+
+.card-content,
+.card-action {
+    padding: 1rem;
+}
+
+h3 {
+    font-size: 1.75rem !important;
+}
+
+.card {
+    h3 {
+        margin-top: .5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.updated-at {
+    @media (min-width:  768px) {
+        padding-top: 3rem;
+    }
+}
+
+.more-info {
+    thead tr {
+
+        background: #EEE;
+    }
+}
+
+.btn-group {
+    margin: 2rem 0 5rem;
+
+    .blue {
+        margin-left: 10px;
+    }
+}
