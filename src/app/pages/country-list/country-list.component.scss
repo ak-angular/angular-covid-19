@@ -5,3 +5,15 @@ h2 {
         font-size: 3.2rem;
     }
 }
+
+.note{
+    margin: 2rem 0 5rem;
+    padding-left: 2.5rem;
+    position: relative;
+
+    &-icon {
+        position: absolute;
+        left: 5px;
+        top: -4px;
+    }
+}

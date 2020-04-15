@@ -1,11 +1,11 @@
 <section *ngIf="stats">
-	<h2 class="mt-3 mb-5">
+	<h2 class="mt-3 mb-5" tabindex="0">
 		<img *ngIf="stats.countryInfo" src="{{ stats.countryInfo.flag }}" class="align-baseline" />
 		{{ stats.country }}
 	</h2>
 	<div class="row">
 		<div class="col s12 m6">
-			<h3>COVID-19 stats:</h3>
+			<h3 tabindex="0">COVID-19 stats:</h3>
 		</div>
 		<div class="col s12 m6 right-align updated-at">
 			<small><em>Last updated: {{ formatterService.date(stats.updated) }}</em></small>
@@ -61,7 +61,7 @@
 
 	<div class="card">
 		<div class="card-content">
-			<h3>More Information:</h3>
+			<h3 tabindex="0">More Information:</h3>
 			<table class="more-info">
 				<thead>
 					<tr>
@@ -83,14 +83,14 @@
 
 	<div class="card">
 		<div class="card-content">
-			<h3>Historical Data:</h3>
+			<h3 tabindex="0">Historical Data:</h3>
 			<area-chart [timeline]="timeline"></area-chart>
 		</div>
 	</div>
 
 	<div class="card">
 		<div class="card-content">
-			<h3>Daily Report:</h3>
+			<h3 tabindex="0">Daily Report:</h3>
 			<stacked-chart [timeline]="timeline"></stacked-chart>
 		</div>
 	</div>
