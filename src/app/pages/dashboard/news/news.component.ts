@@ -18,20 +18,26 @@ export class NewsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.fetchNews();
+    
+    this.getLocation().subscribe(res => {
+      this.fetchNews(res['countryCode'].toLowerCase());
+    });
   }
 
-  fetchNews() {
+  getLocation() {
+    console.log(this.locationService);
+    return this.http.get(this.configService.get('locationApiUrl'));
+  }
+
+  fetchNews(country: string) {
     let apiKey = this.configService.get('newsApiKey');
     let newsApiUrl = this.configService.get('newsApiUrl');
     let params = this.formatterService.param({
-      q: 'COVID',
-      from: '2020-03-16',
       apiKey,
-      pageSize: 10,
-      sortBy: 'publishedAt',
-      language: 'en',
-      page: 1
+      country,
+      q: 'COVID',
+      page: 1,
+      pageSize: 10
     });
     let url: string = `${ newsApiUrl }?${ params }`;
 
