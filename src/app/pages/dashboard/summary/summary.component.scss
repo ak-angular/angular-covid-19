@@ -25,7 +25,7 @@
         }
 
         .card-title {
-            bottom: 35px;
+            top: 35px;
             font-size: 45px;
             font-weight: 700;
             padding-left: 0 !important;
@@ -36,6 +36,21 @@
             span {
                 display: block;
             }
+
+            .today {
+                color: #FFF;
+                font-size: .8rem;
+                font-weight: 300;
+
+                b {
+                    background: rgba(0, 0, 0, 0.7);
+                    border-radius: 4px;
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 5px;
+                    text-shadow: 2px 2px 2px #000;
+                }
+            }
         }
 
         @media(max-width: 576px) {
@@ -44,7 +59,7 @@
             }
 
             .card-title {
-                bottom: 10px;
+                top: 10px;
                 font-size: 24px;
             }
         }
