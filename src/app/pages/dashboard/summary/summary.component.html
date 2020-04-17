@@ -23,9 +23,6 @@
 					<img src="../../../assets/images/card-blue.jpg">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.active) }}</span>
-						<span class="center-align today">
-							<b>Today: {{ formatterService.number(globalStats.todayDeaths) }}</b>
-						</span>
 					</div>
 					
 				</div>
@@ -54,6 +51,9 @@
 					<img src="../../../assets/images/card-3.svg">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.deaths) }}</span>
+						<span class="center-align today">
+							<b>Today: {{ formatterService.number(globalStats.todayDeaths) }}</b>
+						</span>
 					</div>
 					
 				</div>
