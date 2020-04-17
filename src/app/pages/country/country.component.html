@@ -62,12 +62,14 @@
 	<div class="card">
 		<div class="card-content">
 			<h3 tabindex="0">More Information:</h3>
-			<table class="more-info">
+			<table class="more-info responsive-table">
 				<thead>
 					<tr>
 						<th scope="col">Critical</th>
 						<th scope="col">Cases per 1M</th>
 						<th scope="col">Deaths per 1M</th>
+						<th scope="col">Tests</th>
+						<th scope="col">Tests per 1M</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -75,6 +77,8 @@
 						<td>{{ formatterService.number(stats.critical) }}</td>
 						<td>{{ formatterService.number(stats.casesPerOneMillion) }}</td>
 						<td>{{ formatterService.number(stats.deathsPerOneMillion) }}</td>
+						<td>{{ formatterService.number(stats.tests) }}</td>
+						<td>{{ formatterService.number(stats.testsPerOneMillion) }}</td>
 					</tr>
 				</tbody>
 			</table>

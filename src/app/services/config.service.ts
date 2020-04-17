@@ -8,8 +8,8 @@ export class ConfigService {
     gaKey: 'G-CCR7FYV6T5',
     newsApiKey: '7fd8e67e17f745b48a0febc3c323cc36',
     newsApiUrl: 'https://newsapi.org/v2/top-headlines',
-    summaryApiUrl: 'https://corona.lmao.ninja/all',
-    countriesApiUrl: 'https://corona.lmao.ninja/countries/',
+    summaryApiUrl: 'https://corona.lmao.ninja/v2/all',
+    countriesApiUrl: 'https://corona.lmao.ninja/v2/countries/',
     historicalApiUrl: 'https://corona.lmao.ninja/v2/historical/',
     locationApiUrl: 'https://extreme-ip-lookup.com/json/'
   };
