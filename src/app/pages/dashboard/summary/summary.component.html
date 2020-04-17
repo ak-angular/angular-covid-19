@@ -1,7 +1,7 @@
 <div *ngIf="globalStats" class="my-5">
-	<div class="row">
+	<div class="row no-space-bottom">
 		<div class="col s6 xl3 mb-4">
-			<div class="card" routerLink="/cases">
+			<div class="card clickable" routerLink="/cases">
 				<div class="card-image">
 					<img src="../../../assets/images/card-1.jpg">
 					<div class="card-title">
@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<div class="col s6 xl3 mb-4">
-			<div class="card" [routerLink]="['/cases', 'active']">
+			<div class="card clickable" [routerLink]="['/cases', 'active']">
 				<div class="card-image">
 					<img src="../../../assets/images/card-blue.jpg">
 					<div class="card-title">
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="col s6 xl3 mb-4">
-			<div class="card" [routerLink]="['/cases', 'recovered']">
+			<div class="card clickable" [routerLink]="['/cases', 'recovered']">
 				<div class="card-image">
 					<img src="../../../assets/images/card-green.jpg">
 					<div class="card-title">
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 		<div class="col s6 xl3 mb-4">
-			<div class="card" [routerLink]="['/cases', 'deaths']">
+			<div class="card clickable" [routerLink]="['/cases', 'deaths']">
 				<div class="card-image">
 					<img src="../../../assets/images/card-3.svg">
 					<div class="card-title">
@@ -53,6 +53,35 @@
 				</div>
 				<div class="card-content">
 					<h5 class="card-title center-align">Deaths</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<div class="card">
+				<div class="card-content">
+					<h3 tabindex="0" class="more-info-title">Other Details:</h3>
+					<table class="more-info responsive-table">
+						<thead>
+							<tr>
+								<th scope="col">Critical</th>
+								<th scope="col">Cases per 1M</th>
+								<th scope="col">Deaths per 1M</th>
+								<th scope="col">Tests</th>
+								<th scope="col">Tests per 1M</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{{ formatterService.number(globalStats.critical) }}</td>
+								<td>{{ formatterService.number(globalStats.casesPerOneMillion) }}</td>
+								<td>{{ formatterService.number(globalStats.deathsPerOneMillion) }}</td>
+								<td>{{ formatterService.number(globalStats.tests) }}</td>
+								<td>{{ formatterService.number(globalStats.testsPerOneMillion) }}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
