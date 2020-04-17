@@ -25,7 +25,6 @@ export class NewsComponent implements OnInit {
   }
 
   getLocation() {
-    console.log(this.locationService);
     return this.http.get(this.configService.get('locationApiUrl'));
   }
 

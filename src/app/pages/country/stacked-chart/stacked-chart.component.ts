@@ -8,7 +8,8 @@ import {
   ApexResponsive,
   ApexXAxis,
   ApexLegend,
-  ApexFill
+  ApexFill,
+  ApexTooltip
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -20,6 +21,7 @@ export type ChartOptions = {
   xaxis: ApexXAxis;
   legend: ApexLegend;
   fill: ApexFill;
+  tooltip: ApexTooltip;
 };
 
 @Component({
@@ -97,6 +99,10 @@ export class StackedChartComponent implements OnChanges {
       fill: {
         opacity: 1,
         // colors: ["#008FFB", "#00E396", "#dc3545"]
+      },
+      tooltip: {
+        enabled: true,
+        shared: true
       }
 
     };
