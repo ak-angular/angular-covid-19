@@ -4,7 +4,9 @@
     <div class="col s12 m6">
         <ul class="collection">
             <li class="collection-item avatar" *ngFor="let article of news | slice:0:5">
-                <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
+                <a class="title" [href]="article.url" target="_blank">
+                    <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
+                </a>
                 <a class="title" [href]="article.url" target="_blank">{{ article.title }}</a>
                 <p class="right-align">{{ article.source.name }} <span class="badge">{{ formatterService.date(article.publishedAt) }}</span></p>
             </li>
@@ -13,7 +15,9 @@
     <div class="col s12 m6">
         <ul class="collection">
             <li class="collection-item avatar" *ngFor="let article of news | slice:5:10">
-                <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
+                <a class="title" [href]="article.url" target="_blank">
+                    <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
+                </a>
                 <a class="title" [href]="article.url" target="_blank">{{ article.title }}</a>
                 <p class="right-align">{{ article.source.name }} <span class="badge">{{ formatterService.date(article.publishedAt) }}</span></p>
             </li>

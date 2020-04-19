@@ -3,7 +3,7 @@
 		<div class="col s6 xl3 mb-4">
 			<div class="card clickable" routerLink="/cases">
 				<div class="card-image">
-					<img src="../../../assets/images/card-1.jpg">
+					<img src="../../../assets/images/card-1-optimized.jpg" alt="material backgroung image">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.cases) }}</span>
 						<span class="center-align today">
@@ -20,7 +20,7 @@
 		<div class="col s6 xl3 mb-4">
 			<div class="card clickable" [routerLink]="['/cases', 'active']">
 				<div class="card-image">
-					<img src="../../../assets/images/card-blue.jpg">
+					<img src="../../../assets/images/card-blue-optimized.jpg" alt="material backgroung image">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.active) }}</span>
 					</div>
@@ -34,7 +34,7 @@
 		<div class="col s6 xl3 mb-4">
 			<div class="card clickable" [routerLink]="['/cases', 'recovered']">
 				<div class="card-image">
-					<img src="../../../assets/images/card-green.jpg">
+					<img src="../../../assets/images/card-green-optimized.jpg" alt="material backgroung image">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.recovered) }}</span>
 					</div>
@@ -48,7 +48,7 @@
 		<div class="col s6 xl3 mb-4">
 			<div class="card clickable" [routerLink]="['/cases', 'deaths']">
 				<div class="card-image">
-					<img src="../../../assets/images/card-3.svg">
+					<img src="../../../assets/images/card-3.svg" alt="material backgroung image">
 					<div class="card-title">
 						<span class="center-align">{{ formatterService.number(globalStats.deaths) }}</span>
 						<span class="center-align today">

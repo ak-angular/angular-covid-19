@@ -1,6 +1,6 @@
 <section *ngIf="stats">
 	<h2 class="mt-3 mb-5" tabindex="0">
-		<img *ngIf="stats.countryInfo" src="{{ stats.countryInfo.flag }}" class="align-baseline" />
+		<img *ngIf="stats.countryInfo" alt="{{ stats.country }} country logo image" src="{{ stats.countryInfo.flag }}" class="align-baseline" />
 		{{ stats.country }}
 	</h2>
 	<div class="row">
