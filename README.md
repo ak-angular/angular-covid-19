@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## APIs Being Used
+* News: https://newsapi.org/v2/top-headlines
+* Dashboard: https://corona.lmao.ninja/v2/all
+* Country List: https://corona.lmao.ninja/v2/countries/
+* Country Specific Data: https://corona.lmao.ninja/v2/countries/[Country Name]
+* Historical data: https://corona.lmao.ninja/v2/historical/
+* Location API: https://extreme-ip-lookup.com/json/
+
+## More related APIs
+### India Specific Data
+* State and District wise data: https://api.covid19india.org/state_district_wise.json 
+* More from COVID19India: https://api.covid19india.org/
