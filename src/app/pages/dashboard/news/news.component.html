@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col s12 m6">
         <ul class="collection">
-            <li class="collection-item avatar" *ngFor="let article of news | slice:0:5">
+            <li class="collection-item avatar" *ngFor="let article of news | slice:0:splitIndex">
                 <a class="title" [href]="article.url" target="_blank">
                     <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
                 </a>
@@ -14,7 +14,7 @@
     </div>
     <div class="col s12 m6">
         <ul class="collection">
-            <li class="collection-item avatar" *ngFor="let article of news | slice:5:10">
+            <li class="collection-item avatar" *ngFor="let article of news | slice:splitIndex:news.length">
                 <a class="title" [href]="article.url" target="_blank">
                     <img class="circle" [src]="article.urlToImage" [alt]="article.title" data-placeholder="../../assets/images/news-placeholder.png" onerror="this.src=this.getAttribute('data-placeholder')">
                 </a>

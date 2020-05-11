@@ -10,6 +10,7 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class NewsComponent implements OnInit {
   news: Array<any>;
+  splitIndex = 0;
 
   constructor(
     private http: HttpService,
@@ -40,7 +41,10 @@ export class NewsComponent implements OnInit {
     });
     let url: string = `${ newsApiUrl }?${ params }`;
 
-    this.http.get(url).subscribe(res => this.news = res['articles']);
+    this.http.get(url).subscribe(res => {
+      this.news = res['articles'];
+      this.splitIndex = Math.ceil(this.news.length/2)
+    });
   }
 
 }

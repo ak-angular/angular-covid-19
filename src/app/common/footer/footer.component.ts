@@ -9,7 +9,7 @@ export class FooterComponent implements OnInit {
   year = new Date().getFullYear();
   author = {
     name: 'Ashish Kumar',
-    url: 'https://lab.kumarashish.com/'
+    url: 'https://KumarAshish.com/'
   };
 
   constructor() { }
